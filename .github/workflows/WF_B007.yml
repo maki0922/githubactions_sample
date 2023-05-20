@@ -1,5 +1,4 @@
-name: B007 Reusable workflow
-
+name: WFCalled_B007 Reusable workflow
 on:
   workflow_call:
     inputs:

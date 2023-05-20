@@ -8,5 +8,11 @@ run-name: Jobs [値の格納と受け渡しについて]
 on:
   workflow_dispatch:
 jobs:
-  CallWfOutFullName:
+  CallWfOutFullName01:
     uses: ./.github/workflows/WF_B007.yml
+  OutputValue:
+    runs-on: ubuntu-latest
+    needs: [CallWfOutFullName01]
+    steps:
+      - run: |
+          echo "My name is ${{CallWfOutFullName01.outputs.out_FirstName}} ${{CallWfOutFullName01.outputs.out_LastName}}"
