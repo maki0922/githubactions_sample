@@ -16,3 +16,8 @@ Begginer向けに考えたworkflowです。
 | B0001         | 公式ドキュメントのHello World       |
 | B0002         | 公式ドキュメントのworkflow_dispatch |
 | B0002         | 公式ドキュメントのworkflow_dispatch |
+
+
+
+##### 今後の予定
+- default.run
