@@ -39,4 +39,4 @@ jobs:
       - name: needsで対象のjobを指定することでoutputsへアクセスできます。
         id: source
         run: |
-          echo "My Name is ${{needs.JobSource.outputs.FirstName}} ${{needs.JobSource.outputs.LastName}}"
+          echo "My Name is ${{needs.JobSource.outputs.out_FirstName}} ${{needs.JobSource.outputs.out_LastName}}"
