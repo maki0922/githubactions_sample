@@ -13,5 +13,6 @@ jobs:
       - name: 値の格納にはGITHUB_OUTPUTを使用する
         id: step1
         run: |
+          LastName="Azuki"
           echo "FirstName=Maki" >> "$GITHUB_OUTPUT"
-          echo "LastName=Azuki" >> "$GITHUB_OUTPUT"
+          echo "LastName=${LastName}" >> "$GITHUB_OUTPUT"
