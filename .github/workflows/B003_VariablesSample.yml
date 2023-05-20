@@ -5,12 +5,12 @@ on:
     inputs:
       FirstName:
         description: 'FirstName'
-        type: input
+        type: string
         default: Maki(Input)
         required: false
       LastName:
         description: 'LastName'
-        type: input
+        type: string
         default: Azuki(Input)
         required: false
 jobs:
@@ -21,7 +21,7 @@ jobs:
       LAST_NAME: Azuki(Job)
     steps:
       - name: Inputでの変数定義
-        run: echo "My Name is ${inputs.FirstName} ${inputs.LastName}"
+        run: echo "My Name is ${{inputs.FirstName}} ${{inputs.LastName}}"
       - name: Stepでのenv定義
         run: echo "My Name is ${FIRST_NAME} ${LAST_NAME}"
         env:
