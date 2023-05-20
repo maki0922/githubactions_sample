@@ -14,10 +14,9 @@ Begginer向けに考えたworkflowです。
 | WorkFlowID    | Description | Type |
 | ------------- | -------------------------------------  |-------------|
 | B0001         | 公式ドキュメントのHello World          | -            |
-| B0002         | 公式ドキュメントのworkflow_dispatch    | WFTrigger    |
-| B0003         | 変数の定義とオーバーライドの関係を見る  | Variables   |
-| B0004         | Job間の連携                            | Jobs        |
-
+| B0002         | 公式ドキュメントのworkflow_dispatch     | WFTrigger    |
+| B0003         | ENVの定義方法,箇所とoverwriteの関係について  | Variables   |
+| B0004         | Job間の並列実行,依存関係について                            | Jobs        |
 
 
 ##### 今後の予定

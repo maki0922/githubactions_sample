@@ -1,0 +1,20 @@
+name: B004 Jobについて解説 [並列と依存関係]
+run-name: WorkFlow Dispatch Parttern.
+on:
+  workflow_dispatch:
+jobs:
+  job01:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Job1はJob2とは依存関係無いため並列で動く
+        run: echo "Job1 is parallel";sleep5
+  job02:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Job1はJob2とは依存関係無いため並列で動く
+        run: echo "Job2 is parallel";sleep5
+  job03:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Job3はJob1とJob2依存関係(need)があるため、完了後に実行する
+        run: echo "Job3 will start once Job1 and Job2 are completed.";sleep5
