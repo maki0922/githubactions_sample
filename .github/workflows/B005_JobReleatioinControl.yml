@@ -32,7 +32,13 @@ jobs:
     steps:
       - name: 全てのJobが実行された場合実行される
         run: echo is_deploy is ${{ inputs.is_deploy}};sleep 5
-
+  AllExec:
+    if: ${{ always() }}
+    needs: [Deploy,DeployNeeds,Parallel]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Category DeployとParallelが成功したかどうかに関係なしに実行されます。
+        run: echo is_deploy is ${{ inputs.is_deploy}};sleep 5
 
 #    if: ${{ inputs.is_deploy == 'true' }}
 #        type: string
