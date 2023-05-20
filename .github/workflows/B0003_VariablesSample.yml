@@ -1,4 +1,4 @@
-name: B0003 Variabesの使い方
+name: B0003 Variabesの使い方 初級編[001]
 run-name: WorkFlow Dispatch Parttern.
 on:
   workflow_dispatch:
@@ -10,9 +10,15 @@ on:
 jobs:
   job01:
     runs-on: ubuntu-latest
+    env:
+      FIRST_NAME: Maki(Job)
+      LAST_NAME: Azuki(Job)
     steps:
-      - name: runでのenvの使い方
+      - name: Stepでのenv定義
         run: echo "My Name is ${FIRST_NAME} ${LAST_NAME}"
         env:
-          FIRST_NAME: Maki
-          LAST_NAME: Azuki
+          FIRST_NAME: Maki(Step)
+          LAST_NAME: Azuki(Step)
+    steps:
+      - name: JobでのEnv定義
+        run: echo "My Name is ${FIRST_NAME} ${LAST_NAME}"
