@@ -20,7 +20,7 @@ Begginer向けに考えたworkflowです。
 | B0004         | Job間の並列実行,依存関係について | Jobs        | -            |
 | B0005         | Jobのif文を用いた実行制御について | Jobs        | -            |
 | B0006         | StepとJob間の値の受け渡しについて | Jobs        | GITHUB_OUTPUT            |
-| B0007         | 「ワークフローの再利用」について  | Jobs        | GITHUB_OUTPUT            |
+| B0007         | 「ワークフローの再利用」(wfでwfを呼ぶ)について  | call_workflow        | -            |
 
 
 ##### 今後の予定
