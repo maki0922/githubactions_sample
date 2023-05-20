@@ -1,4 +1,4 @@
-name: B0003 Variabes
+name: B0003 Variabesの使い方
 run-name: WorkFlow Dispatch Parttern.
 on:
   workflow_dispatch:
@@ -9,9 +9,10 @@ on:
         required: true
 jobs:
   job01:
-      steps:
-        - name: output env
-          run: echo "My Name is ${FIRST_NAME} ${LAST_NAME}"
-          env:
-            FIRST_NAME: Maki
-            LAST_NAME: Azuki
+    runs-on: ubuntu-latest
+    steps:
+      - name: runでのenvの使い方
+        run: echo "My Name is ${FIRST_NAME} ${LAST_NAME}"
+        env:
+          FIRST_NAME: Maki
+          LAST_NAME: Azuki
