@@ -3,9 +3,15 @@ run-name: WorkFlow Dispatch Parttern.
 on:
   workflow_dispatch:
     inputs:
-      environment:
-        description: 'Environment to run tests against'
+      FirstName:
+        description: 'FirstName'
         type: input
+        default: Maki(Input)
+        required: false
+      LastName:
+        description: 'LastName'
+        type: input
+        default: Azuki(Input)
         required: false
 jobs:
   job01:
@@ -14,6 +20,8 @@ jobs:
       FIRST_NAME: Maki(Job)
       LAST_NAME: Azuki(Job)
     steps:
+      - name: Inputでの変数定義
+        run: echo "My Name is ${input.FirstName} ${input.LastName}"
       - name: Stepでのenv定義
         run: echo "My Name is ${FIRST_NAME} ${LAST_NAME}"
         env:

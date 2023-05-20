@@ -11,13 +11,15 @@ Begginer向けに考えたworkflowです。
   - aaa
 
 ## Begginer向けWorkFlow
-| WorkFlowID    | Description |
-| ------------- | -------------                      |
-| B0001         | 公式ドキュメントのHello World       |
-| B0002         | 公式ドキュメントのworkflow_dispatch |
-| B0002         | 公式ドキュメントのworkflow_dispatch |
+| WorkFlowID    | Description | Type |
+| ------------- | -------------------------------------  |-------------|
+| B0001         | 公式ドキュメントのHello World          | -            |
+| B0002         | 公式ドキュメントのworkflow_dispatch    | WFTrigger    |
+| B0003         | 変数の定義とオーバーライドの関係を見る  | Variables   |
+
 
 
 
 ##### 今後の予定
 - default.run
+- concurrency
