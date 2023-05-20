@@ -16,7 +16,7 @@ jobs:
         run: |
           LastName="Azuki"
           echo "FirstName=Maki" >> "$GITHUB_ENV"
-          echo "LastName=${LastName}" 
+          echo "LastName=${LastName}" >> "$GITHUB_ENV"
       - name: 格納した値を出力させます。
         run: |
           echo "${LastName} <= 同じコンテキストではない為、空が出力される。"
