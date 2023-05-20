@@ -11,13 +11,13 @@ jobs:
   StepControl:
     runs-on: ubuntu-latest
     steps:
-      - name: 値の格納にはGITHUB_OUTPUTを使用する
+      - name: Step間で値を受け渡すだけであればGITHUB_ENVを使えば良い。(JOB間では通用しない)
         id: step1
         run: |
           LastName="Azuki"
-          echo "FirstName=Maki" >> "$GITHUB_OUTPUT"
-          echo "LastName=${LastName}" >> "$GITHUB_OUTPUT"
+          echo "FirstName=Maki" >> "$GITHUB_ENV"
+          echo "LastName=${LastName}" v
       - name: 格納した値を出力させます。
         run: |
-          echo "${LastName}"
-          echo "${{ steps.step1.LastName}}"
+          echo "${LastName} <= 同じコンテキストではない為、空が出力される。"
+          echo "My Name is ${{ env.FirstName}} ${{ env.LastName}}"
