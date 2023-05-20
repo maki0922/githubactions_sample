@@ -10,9 +10,21 @@ on:
 jobs:
   CallWfOutFullName01:
     uses: ./.github/workflows/WF_B007.yml
-  OutputValue:
+  CallWfOutFullName02:
+    uses: ./.github/workflows/WF_B007.yml
+    with:
+      FirstName: Maki(02)
+      LastName: Azuki(02)
+  OutputValue01:
     runs-on: ubuntu-latest
     needs: [CallWfOutFullName01]
     steps:
       - run: |
           echo "My name is ${{needs.CallWfOutFullName01.outputs.out_FirstName}} ${{needs.CallWfOutFullName01.outputs.out_LastName}}"
+  OutputValue02:
+    runs-on: ubuntu-latest
+    needs: [CallWfOutFullName01,CallWfOutFullName02]
+    steps:
+      - run: |
+          echo "My name is ${{needs.CallWfOutFullName01.outputs.out_FirstName}} ${{needs.CallWfOutFullName01.outputs.out_LastName}}"
+          echo "My name is ${{needs.CallWfOutFullName02.outputs.out_FirstName}} ${{needs.CallWfOutFullName02.outputs.out_LastName}}"
