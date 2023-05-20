@@ -10,10 +10,11 @@ on:
         required: true
 jobs:
   Deploy:
-    if: ${{ inputs.is_deploy == 'true' }}
+    if: ${{ inputs.is_deploy == true }}
     runs-on: ubuntu-latest
     steps:
       - name: 変数is_deployがtrueの場合は実行される
         run: echo is_deploy is ${{ inputs.is_deploy}}
 
+#    if: ${{ inputs.is_deploy == 'true' }}
 #        type: string
