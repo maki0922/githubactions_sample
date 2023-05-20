@@ -11,7 +11,7 @@ jobs:
   job01:
       steps:
         - name: output env
-          run: My Name is ${FIRST_NAME} ${LAST_NAME}
+          run: echo "My Name is ${FIRST_NAME} ${LAST_NAME}"
           env:
             FIRST_NAME: Maki
             LAST_NAME: Azuki
