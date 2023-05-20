@@ -1,5 +1,6 @@
 ######################
 # 説明 : Step/Job間の値の受け渡し方法について学ぶ
+#        ここでは新しくjob.<job_id>.idのコンテキストを学びます。
 ######################
 
 name: B006 Jobs [値の格納と受け渡しについて]
@@ -16,3 +17,6 @@ jobs:
           LastName="Azuki"
           echo "FirstName=Maki" >> "$GITHUB_OUTPUT"
           echo "LastName=${LastName}" >> "$GITHUB_OUTPUT"
+      - name: 格納した値を出力させます。
+        run: |
+          echo "${LastName}"
