@@ -9,6 +9,7 @@ Begginer向けに考えたworkflowです。
 ## 参考ページ
 - [公式ドキュメント](https://docs.github.com/ja/actions)
   - [if文](https://docs.github.com/ja/actions/learn-github-actions/expressions#status-check-functions)
+  - [ワークフローの再利用](https://docs.github.com/ja/actions/using-workflows/reusing-workflows)
 
 ## Begginer向けWorkFlow
 | WorkFlowID    | Description | Type | Memo |
@@ -19,6 +20,7 @@ Begginer向けに考えたworkflowです。
 | B0004         | Job間の並列実行,依存関係について | Jobs        | -            |
 | B0005         | Jobのif文を用いた実行制御について | Jobs        | -            |
 | B0006         | StepとJob間の値の受け渡しについて | Jobs        | GITHUB_OUTPUT            |
+| B0007         | 「ワークフローの再利用」について  | Jobs        | GITHUB_OUTPUT            |
 
 
 ##### 今後の予定

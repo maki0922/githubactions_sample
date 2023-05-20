@@ -1,0 +1,12 @@
+######################
+# 説明 : ここでは再利用workflowの基本を学びます。
+#        Workflowの実行と戻り値の使い方を知りましょう
+######################
+
+name: B007 Jobs [値の格納と受け渡しについて]
+run-name: Jobs [値の格納と受け渡しについて]
+on:
+  workflow_dispatch:
+jobs:
+  CallWfOutFullName:
+    uses: ./.github/workflows/WF_B007.yml

@@ -1,0 +1,39 @@
+name: B007 Reusable workflow
+
+on:
+  workflow_call:
+    inputs:
+      FirstName:
+        description: "FirstName"
+        type: string
+        default: "Maki(default)"
+        required: false
+      LastName:
+        description: "LastName"
+        type: string
+        default: "Azuki(default)"
+        required: false
+    outputs:
+      out_FirstName:
+        description: "The first output string"
+        value: ${{ jobs.StoreFullName.outputs.out_FirstName }}
+      out_LastName:
+        description: "The second output string"
+        value: ${{ jobs.StoreFullName.outputs.out_LastName }}
+jobs:
+  StoreFullName:
+    name: Generate output
+    runs-on: ubuntu-latest
+    outputs:
+      out_FirstName: ${{ steps.SaveValue.outputs.FirstName }}
+      out_LastName: ${{ steps.SaveValue.outputs.LastName }}
+    steps:
+      - name: 渡された値を表示します
+        run: |
+          echo "${{inputs.FirstName}}"
+          echo "${{inputs.LastName}}"
+      - name: 呼び出し元で変数を使用する場合、outputsを使用します。
+        id: SaveValue
+        run: |
+          echo "FirstName=${{inputs.FirstName}}" >> $GITHUB_OUTPUT
+          echo "LastName=${{inputs.LastName}}" >> $GITHUB_OUTPUT

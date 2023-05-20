@@ -1,6 +1,6 @@
 ######################
 # 説明 : Step/Job間の値の受け渡し方法について学ぶ
-#        ここでは新しくjob.<job_id>.idのコンテキストとGITHUB_ENV,GITHUB_OUTPUTを学びます。
+#        ここでは新しくoutputs,idのコンテキストとGITHUB_ENV,GITHUB_OUTPUTを学びます。
 ######################
 
 name: B006 Jobs [値の格納と受け渡しについて]
@@ -11,7 +11,7 @@ jobs:
   StepControl:
     runs-on: ubuntu-latest
     steps:
-      - name: Step間で値を受け渡すだけであればGITHUB_ENVを使えば良い(JOB間では通用しない)
+      - name: Step間で値を受け渡すだけであればGITHUB_ENVを使いましょう(JOB間では通用しない)
         id: step1
         run: |
           LastName="Azuki"
