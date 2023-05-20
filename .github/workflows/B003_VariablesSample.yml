@@ -1,5 +1,5 @@
 name: B003 Variabesの使い方 初級 [ENVを定義して出力する]編
-run-name: WorkFlow Dispatch Parttern.
+run-name: Variabesの使い方 初級 [ENVを定義して出力する]編
 on:
   workflow_dispatch:
     inputs:
