@@ -6,11 +6,11 @@ on:
       is_deploy:
         description: 'is_deploy'
         type: string
-        default: true
+        default: Go
         required: true
 jobs:
   Deploy:
-    if: inputs.Deploy == 'true'
+    if: inputs.Deploy == 'Go'
     runs-on: ubuntu-latest
     steps:
       - name: 変数is_deployがtrueの場合は実行される
