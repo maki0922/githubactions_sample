@@ -11,7 +11,7 @@ jobs:
   StepControl:
     runs-on: ubuntu-latest
     steps:
-      - name: Step間で値を受け渡すだけであればGITHUB_ENVを使えば良い。(JOB間では通用しない)
+      - name: Step間で値を受け渡すだけであればGITHUB_ENVを使えば良い(JOB間では通用しない)
         id: step1
         run: |
           LastName="Azuki"
@@ -19,5 +19,24 @@ jobs:
           echo "LastName=${LastName}" >> "$GITHUB_ENV"
       - name: 格納した値を出力させます。
         run: |
-          echo "${LastName} <= 同じコンテキストではない為、空が出力される。"
+          echo "${LastName} <= 同じコンテキストではない為、空が出力される"
           echo "My Name is ${{ env.FirstName}} ${{ env.LastName}}"
+  JobSource:
+    runs-on: ubuntu-latest
+    outputs:
+      out_FirstName: ${{ steps.source.outputs.FirstName }}
+      out_LastName: ${{ steps.source.outputs.LastName }}
+    steps:
+      - name: Job間で値をやり取りするためにはGITHUB_OUTPUTとoutputsを使用します
+        id: source
+        run: |
+          echo "FirstName=Maki(JobSource)" >> "$GITHUB_OUTPUT"
+          echo "LastName=Azuki(JobSource)" >> "$GITHUB_OUTPUT"
+  JobDest:
+    runs-on: ubuntu-latest
+    needs: [JobSource]
+    steps:
+      - name: needsで対象のjobを指定することでoutputsへアクセスできます。
+        id: source
+        run: |
+          echo "My Name is ${{needs.JobSource.outputs.FirstName}} ${{needs.JobSource.outputs.LastName}}"

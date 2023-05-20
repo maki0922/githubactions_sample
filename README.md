@@ -24,3 +24,5 @@ Begginer向けに考えたworkflowです。
 ##### 今後の予定
 - default.run
 - concurrency
+- [secret mask](https://docs.github.com/ja/actions/using-workflows/workflow-commands-for-github-actions)
+- [複数行GITHUB_OUTPUT](https://gotohayato.com/content/558/)
