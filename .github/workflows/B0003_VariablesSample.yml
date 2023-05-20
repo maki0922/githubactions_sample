@@ -1,0 +1,17 @@
+name: B0003 Variabes
+run-name: WorkFlow Dispatch Parttern.
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to run tests against'
+        type: environment
+        required: true
+jobs:
+  job01:
+      steps:
+        - name: output env
+          run: My Name is ${FIRST_NAME} ${LAST_NAME}
+          env:
+            FIRST_NAME: Maki
+            LAST_NAME: Azuki
