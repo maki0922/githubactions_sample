@@ -13,9 +13,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 変数is_deployがtrueの場合は実行される
-        run: echo is_deploy is true
-  Deploy2:
-    runs-on: ubuntu-latest
-    steps:
-      - name: 変数is_deployがtrueの場合は実行される
-        run: echo is_deploy is true
+        run: echo is_deploy is ${{ inputs.is_deploy}}
