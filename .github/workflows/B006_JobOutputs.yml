@@ -8,7 +8,7 @@ run-name: Jobs [値の格納と受け渡しについて]
 on:
   workflow_dispatch:
 jobs:
-  Job01:
+  StepControl:
     runs-on: ubuntu-latest
     steps:
       - name: 値の格納にはGITHUB_OUTPUTを使用する
@@ -20,3 +20,4 @@ jobs:
       - name: 格納した値を出力させます。
         run: |
           echo "${LastName}"
+          echo "${{ steps.step1.LastName}}"
