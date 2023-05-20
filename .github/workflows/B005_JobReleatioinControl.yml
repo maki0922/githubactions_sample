@@ -26,6 +26,13 @@ jobs:
     steps:
       - name: Job Deployの実行有無関係無しに並列実行される
         run: echo is_deploy is ${{ inputs.is_deploy}};sleep 5
+  AllExec:
+    needs: [Deploy,DeployNeeds,Parallel]
+    runs-on: ubuntu-latest
+    steps:
+      - name: 全てのJobが実行された場合実行される
+        run: echo is_deploy is ${{ inputs.is_deploy}};sleep 5
+
 
 #    if: ${{ inputs.is_deploy == 'true' }}
 #        type: string
