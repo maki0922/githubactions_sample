@@ -13,19 +13,27 @@ on:
         type: string
         default: Azuki(Input)
         required: false
+env:
+  FIRST_NAME: Maki(WF)
+  LAST_NAME: Azuki(WF)
 jobs:
   job01:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Inputで定義された変数の出力(オーバーライド関係なし)
+        run: echo "My Name is ${{inputs.FirstName}} ${{inputs.LastName}}"
+      - name: Workflowで定義された変数の出力
+        run: echo "My Name is ${FIRST_NAME} ${LAST_NAME}"
+  job02:
     runs-on: ubuntu-latest
     env:
       FIRST_NAME: Maki(Job)
       LAST_NAME: Azuki(Job)
     steps:
-      - name: Inputでの変数定義
-        run: echo "My Name is ${{inputs.FirstName}} ${{inputs.LastName}}"
-      - name: Stepでのenv定義
+      - name: Stepで定義されたenv定義
         run: echo "My Name is ${FIRST_NAME} ${LAST_NAME}"
         env:
           FIRST_NAME: Maki(Step)
           LAST_NAME: Azuki(Step)
-      - name: JobでのEnv定義
+      - name: Jobで定義されたenv定義
         run: echo "My Name is ${FIRST_NAME} ${LAST_NAME}"
