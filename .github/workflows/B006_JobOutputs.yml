@@ -1,0 +1,17 @@
+######################
+# 説明 : Step/Job間の値の受け渡し方法について学ぶ
+######################
+
+name: B006 Jobs [値の格納と受け渡しについて]
+run-name: Jobs [値の格納と受け渡しについて]
+on:
+  workflow_dispatch:
+jobs:
+  Job01:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 値の格納にはGITHUB_OUTPUTを使用する
+        id: step1
+        run: |
+          echo "FirstName=Maki" >> "$GITHUB_OUTPUT"
+          echo "LastName=Azuki" >> "$GITHUB_OUTPUT"

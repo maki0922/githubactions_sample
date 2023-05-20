@@ -8,16 +8,17 @@ Begginer向けに考えたworkflowです。
 
 ## 参考ページ
 - [公式ドキュメント](https://docs.github.com/ja/actions)
-  - aaa
+  - [if文](https://docs.github.com/ja/actions/learn-github-actions/expressions#status-check-functions)
 
 ## Begginer向けWorkFlow
-| WorkFlowID    | Description | Type |
-| ------------- | -------------------------------------  |-------------|
-| B0001         | 公式ドキュメントのHello World          | -            |
-| B0002         | 公式ドキュメントのworkflow_dispatch     | WFTrigger    |
-| B0003         | ENVの定義方法,箇所とoverwriteの関係について  | Variables   |
-| B0004         | Job間の並列実行,依存関係について | Jobs        |
-| B0005         | Jobのif文を用いた実行制御について | Jobs        |
+| WorkFlowID    | Description | Type | Memo |
+| ------------- | -------------------------------------  |-------------|-------------|
+| B0001         | 公式ドキュメントのHello World          | -            | -            |
+| B0002         | 公式ドキュメントのworkflow_dispatch     | WFTrigger    | -            |
+| B0003         | ENVの定義方法,箇所とoverwriteの関係について  | Variables   | -            |
+| B0004         | Job間の並列実行,依存関係について | Jobs        | -            |
+| B0005         | Jobのif文を用いた実行制御について | Jobs        | -            |
+| B0006         | Jobのif文を用いた実行制御について | Jobs        | -            |
 
 
 ##### 今後の予定
