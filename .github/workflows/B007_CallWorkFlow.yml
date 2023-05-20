@@ -3,8 +3,8 @@
 #        Workflowの実行と戻り値の使い方を知りましょう
 ######################
 
-name: B007 Jobs [値の格納と受け渡しについて]
-run-name: Jobs [値の格納と受け渡しについて]
+name: B007 workflow_call [「再利用ワークフロー」について]
+run-name: workflow_call [「再利用ワークフロー」について]
 on:
   workflow_dispatch:
 jobs:
@@ -15,4 +15,4 @@ jobs:
     needs: [CallWfOutFullName01]
     steps:
       - run: |
-          echo "My name is ${{CallWfOutFullName01.outputs.out_FirstName}} ${{CallWfOutFullName01.outputs.out_LastName}}"
+          echo "My name is ${{needs.CallWfOutFullName01.outputs.out_FirstName}} ${{needs.CallWfOutFullName01.outputs.out_LastName}}"
