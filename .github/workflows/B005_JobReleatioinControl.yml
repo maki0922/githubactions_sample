@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: 変数is_deployがtrueの場合は実行される
         run: echo is_deploy is ${{ inputs.is_deploy}};sleep 5
-  DeployNeeds:
+  DeployNeeds01:
     needs: [Deploy]
     runs-on: ubuntu-latest
     steps:
@@ -39,6 +39,3 @@ jobs:
     steps:
       - name: Category DeployとParallelが成功したかどうかに関係なしに実行されます。
         run: echo is_deploy is ${{ inputs.is_deploy}};sleep 5
-
-#    if: ${{ inputs.is_deploy == 'true' }}
-#        type: string
