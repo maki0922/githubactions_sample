@@ -1,4 +1,4 @@
-name: B0003 Variabesの使い方 初級 [変数を定義して出力する]編
+name: B003 Variabesの使い方 初級 [変数を定義して出力する]編
 run-name: WorkFlow Dispatch Parttern.
 on:
   workflow_dispatch:

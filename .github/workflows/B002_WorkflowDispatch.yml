@@ -1,4 +1,4 @@
-name: B0002 workflow_dispatch
+name: B002 workflow_dispatch
 run-name: WorkFlow Dispatch Parttern.
 on:
   workflow_dispatch:
