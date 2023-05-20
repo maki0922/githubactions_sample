@@ -1,5 +1,5 @@
-name: B004 Jobについて解説 [並列と依存関係]
-run-name: Jobについて解説 [並列と依存関係]
+name: B004 Jobs [並列と依存関係]
+run-name: Jobs [並列と依存関係]
 on:
   workflow_dispatch:
 jobs:
@@ -17,5 +17,5 @@ jobs:
     runs-on: ubuntu-latest
     needs: [job01, job02]
     steps:
-      - name: Job3はJob1とJob2依存関係(need)があるため、完了後に実行する
+      - name: Job3は「needs」でJob1とJob2依存関係を設定している。両者が完了後に実行される
         run: echo "Job3 will start once Job1 and Job2 are completed.";sleep 5
