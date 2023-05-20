@@ -32,7 +32,7 @@ jobs:
     steps:
       - name: 全てのJobが実行された場合実行される
         run: echo is_deploy is ${{ inputs.is_deploy}};sleep 5
-  AllExec:
+  AlwaysExec:
     if: ${{ always() }}
     needs: [Deploy,DeployNeeds,Parallel]
     runs-on: ubuntu-latest
